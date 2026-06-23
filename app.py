@@ -30,6 +30,7 @@ CLASS_NAMES = [
 
 # Forzamos CPU para que no busque CUDA de Nvidia de manera nativa en Windows
 device = torch.device("cpu")
+torch.set_num_threads(1) # Límite de hilos para evitar que Render se quede sin memoria RAM
 
 def load_model():
     # Inicializa la estructura limpia de EfficientNet-B0
